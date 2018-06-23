@@ -1,0 +1,33 @@
+   {% extends "_layout.html" %}
+
+       {% block content %}
+
+          {% if excep %}
+                            <div class="alert alert-danger">
+                                 <strong>  {{ excep }}</strong>
+                            </div>
+        {%  endif %}
+        {% if msg %}
+                            <div class="alert alert-success">
+                                 <strong>  {{ msg }}</strong>
+                            </div>
+        {%  endif %}
+
+
+<form   action="" method="POST">
+
+      {% csrf_token %}
+        {{ UserRegisterForm.as_p }}
+<!--  <div class="form-group"   >
+
+
+
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+ -->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+       {%endblock %}

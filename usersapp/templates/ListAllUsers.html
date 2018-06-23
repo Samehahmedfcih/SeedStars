@@ -1,0 +1,26 @@
+   {% extends "_layout.html" %}
+
+       {% block content %}
+
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+          <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for User in Users %}
+    <tr>
+        <th scope="row">{{ User.id }}</th>
+        <td>{{ User.Name }}</td>
+        <td>{{ User.Email }}</td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+        {%endblock %}
